@@ -1902,7 +1902,7 @@ Event.prototype.trigger = function () {
 	}
 };
 
-var Charts = function Charts(opts) {
+var Charts = function Charts(opts, component) {
     opts.title = opts.title || {};
     opts.subtitle = opts.subtitle || {};
     opts.yAxis = opts.yAxis || {};
@@ -1917,7 +1917,7 @@ var Charts = function Charts(opts) {
 
     this.opts = opts;
     this.config = config$1;
-    this.context = wx.createCanvasContext(opts.canvasId);
+    this.context = wx.createCanvasContext(opts.canvasId, component);
     // store calcuated chart data
     // such as chart point coordinate
     this.chartData = {};
